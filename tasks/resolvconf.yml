@@ -6,8 +6,8 @@
     state: absent
   when: ansible_distribution|lower != "fedora"
 
-- name: Distribute resolv.conf template
+- name: Distribute resolv.conf from template
   ansible.builtin.template:
-    src: resolv.conf
+    src: resolv.conf.j2
     dest: /etc/resolv.conf
     mode: '0644'
